@@ -1,20 +1,23 @@
-def print_hello_n_times(n):
-  """Prints 'Hello, World!' n times.
+def print_hello_n_times(n: int):
+    """Prints 'Hello, World!' n times.
 
-  Args:
-    n: The number of times to print the message.
-  """
+    Args:
+        n (int): The number of times to print the message.
+    """
+    for i in range(n):
+        print('Hello, World!')
 
-  for _ in range(n):
-    print('Hello, World!')
+def main():
+    while True:
+        try:
+            user_input = int(input('Enter a positive integer: '))
+            if user_input <= 0:
+                print('Please enter a positive integer.\n')
+                continue
+            print_hello_n_times(user_input)
+            break
+        except ValueError:
+            print('Invalid input. Please enter an integer.\n')
 
-while True:
-  try:
-    user_input = int(input('Enter a positive integer: '))
-    if user_input <= 0:
-      print('Please enter a positive integer.\n')
-      continue
-    print_hello_n_times(user_input)
-    break
-  except ValueError:
-    print('Invalid input. Please enter an integer.\n')
+if __name__ == "__main__":
+    main()
