@@ -11,8 +11,8 @@ def main():
     while True:
         try:
             user_input = int(input('Enter a positive integer: '))
-            if user_input <= 0:
-                print('Please enter a positive integer.\n')
+            if user_input <= 0 or user_input > 24:
+                print('Please enter a positive integer that is less than 25.\n')
                 continue
             print_hello_n_times(user_input)
             break
